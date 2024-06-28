@@ -1,0 +1,27 @@
+package com.kh.spring.board.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kh.spring.board.model.service.BoardService;
+import com.kh.spring.board.model.vo.Board;
+
+import lombok.RequiredArgsConstructor;
+
+//이 컨트롤러는 보드s로 시작하는 요청이 들어오면 처리를 해줄 컨트롤러
+@RestController
+@RequiredArgsConstructor
+@RequestMapping(value="boards", produces="application/json; charset=UTF-8")
+public class BoardsController {
+	
+	private final BoardService boardService;
+	
+	@GetMapping
+	public List<Board> findTopFiveBoard() {
+		boardService.findTopBoard();
+	}
+	
+}

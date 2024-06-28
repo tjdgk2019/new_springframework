@@ -1,0 +1,11 @@
+package com.kh.spring.board.controller;
+
+import com.kh.spring.board.model.service.BoardService;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class BoardsController {
+	private BoardService boardService;
+	
+}

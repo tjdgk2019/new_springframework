@@ -1,0 +1,8 @@
+package com.kh.spring.board.controller;
+
+import com.kh.spring.board.model.service.BoardService;
+
+public class BoardsController {
+	private BoardService boardService;
+	
+}

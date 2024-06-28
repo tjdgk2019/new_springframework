@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>비동기 통신 활용법</h1>
+    <h3>AJAX</h3>
+    <p>
+    Asynchronous JavaScript And XML의 약자로<br>
+    
+    </p>
+</body>
+</html>

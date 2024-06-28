@@ -1,0 +1,19 @@
+package com.kh.ajax.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class AjaxController {
+	
+	/*1. httpservletReonse객체로 응답데이터를 읃답하기(stream을 이용한 방식)
+	 * 
+	 * 
+	 */
+	@GetMapping("ajax.do")
+	public void calSum(String menu,
+						int amount) {
+		System.out.println("사용자가 입력한 메뉴 : "+ menu);
+		System.out.println("사용자가 입력한 수량 : "+ amount);
+	}
+}

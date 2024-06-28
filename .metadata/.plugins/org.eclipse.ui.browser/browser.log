@@ -1,0 +1,17 @@
+
+6월 20, 2024 16:21:13.722 NEW SESSION
+6월 20, 2024 16:21:13.722 Created TensorFlow Lite XNNPACK delegate for CPU.
+6월 20, 2024 16:49:43.438 [11492:15552:0620/164943.438:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+6월 20, 2024 17:19:25.568 [11492:15552:0620/171925.568:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+
+6월 25, 2024 10:20:11.80 NEW SESSION
+6월 25, 2024 10:20:11.80 Created TensorFlow Lite XNNPACK delegate for CPU.
+6월 25, 2024 10:23:51.859 Created TensorFlow Lite XNNPACK delegate for CPU.
+6월 25, 2024 11:20:44.304 Created TensorFlow Lite XNNPACK delegate for CPU.
+6월 25, 2024 11:24:08.431 [5224:1504:0625/112408.431:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+6월 25, 2024 11:24:14.535 [5224:1504:0625/112414.535:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+6월 25, 2024 14:16:50.248 Created TensorFlow Lite XNNPACK delegate for CPU.
+6월 25, 2024 14:50:02.786 Created TensorFlow Lite XNNPACK delegate for CPU.
+6월 25, 2024 14:51:30.535 [5396:14408:0625/145130.535:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+6월 25, 2024 14:59:55.492 Created TensorFlow Lite XNNPACK delegate for CPU.
+6월 25, 2024 15:24:45.281 Created TensorFlow Lite XNNPACK delegate for CPU.

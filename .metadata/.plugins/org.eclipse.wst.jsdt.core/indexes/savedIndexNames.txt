@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+D:\seongha\new_springfamework\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3638655088.index
+4005865305.index
+968316451.index
+2384334901.index
+3686783653.index
+1197519833.index
+1024948279.index
+1559504237.index
