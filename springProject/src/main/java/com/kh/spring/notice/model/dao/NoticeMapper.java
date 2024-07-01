@@ -8,6 +8,7 @@ import com.kh.spring.notice.model.vo.Notice;
 
 @Mapper
 public interface NoticeMapper {
+	
 	List<Notice> findAll();
 	
 	Notice findById(int noticeNo);
@@ -16,5 +17,5 @@ public interface NoticeMapper {
 	
 	int update(Notice notice);
 	
-	int delete(int notice);
+	int delete(int noticeNo);
 }

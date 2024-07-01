@@ -36,7 +36,7 @@
 	}
 
 	#detail{
-		background-color:#23C293; 
+		background-color : #999;
 		width:800px; 
 		margin: auto;
 		text-align:center;
@@ -79,7 +79,7 @@
 				
 				  <div class="form-group">
 					<label>작성자</label>
-					<input type="text" class="form-control" id='noticeWriter' value="" readonly>
+					<input type="text" class="form-control" id='noticeWriter' value="${ sessionScope.loginUser.userId }" readonly>
 				  </div>
 				  
 				  <div class="form-group">
@@ -137,7 +137,169 @@
 		  </div>
 		</div>
 	</div>
+	<script>
+	 window.onload = () => {
+	        findAll();
+	    }
+		
+	 function insert() {
+	        const requestData = {
+        		 "noticeTitle" : $('#noticeTitle').val(),
+                 "noticeWriter" : $('#noticeWriter').val(),
+                 "noticeContent" : $("#noticeContent").val()
+	        };
 
+	        $.ajax({
+	            url: 'notice',
+	            type: 'post',
+	            data : requestData,
+	            success: response => {
+	                //console.log(response);
+
+	                if(response.message === '서비스 요청 성공') {
+		               $('#outerDiv').remove();
+		               findAll();
+		               $('#noticeTitle').val('');
+		               $('#noticeContent').val('');
+
+	                }
+	            }
+	        });
+	    }
+	 	
+	 	function deleteById(noticeNo){
+	 		$.ajax({
+	 			url: 'notice/' +noticeNo,
+	 			type: 'delete',
+	 			success : response => {
+	 				//console.log(response);
+	 				if(response.data === '삭제성공'){
+	 					$('#detail').slideUp(300);
+	 					$('#outerDiv').remove();
+	 					findAll();
+	
+	 				};
+	 				
+	 				
+	 				
+	 				
+	 				
+	 			}
+	 		});
+	 	}
+	 	
+	 	
+		 $('#content').on('click', '.noticeEl', e => {
+			    const noticeNo = $(e.currentTarget).children().eq(0).text();
+			    $.ajax({
+			        url: 'notice/' + noticeNo,
+			        type: 'get',
+			        success: response => {
+			            const notice = response.data;
+			            
+			            const contentValue = '<div id="notice-detail">'
+			                               + '<div>' + notice.noticeTitle + '</div>'
+			                               + '<div>' + notice.noticeContent + '</div>'
+			                               + '<div>'
+			                               + '<a class="btn btn-sm btn-warning" data-toggle="modal" href="#updateModal">'
+			                               + '수정하기'
+			                               + '</a>'
+			                               + '<a class="btn btn-sm btn-secondary" onclick="deleteById('+notice.noticeNo +')">삭제하기</a>'
+			                               + '</div>'
+			                               + '</div>';
+			                               
+			            $('#detail').html(contentValue);
+			            $('#detail').slideDown(500);
+			        }
+			    });
+			});
+			
+			
+			
+		const findAll = () => {
+			$.ajax({
+				url : 'notice',
+				type : 'get',
+				success : response => {
+					
+					//console.log(response);
+					
+					const noticeList = response.data;
+					//console.log(noticeList);
+					const outerDiv = document.createElement('div');
+					outerDiv.id='outerDiv';
+					
+					//console.log(outerDiv);
+					noticeList.map(o => {
+                		
+						const noticeEl = document.createElement('div');
+                		noticeEl.className = 'noticeEl';
+						
+						/*
+						noticeList.map(o => {
+							//console.log(o);
+							const noticeEl = document.createElement('div');
+							noticeEl.className = 'noticeEl';
+							
+							const numEl = document.createElement('div');
+							const numText = document.createTextNode(o.noticeNo);
+							numEl.style.width = '50px';
+							//console.log(numEl);
+							//console.log(numText);
+							numEl.appendChild(numText);
+							//console.log(numEl);
+							noticeEl.appendChild(numEl);
+							
+							const titleEl = document.createElement('div');
+							const titleText = document.createTextNode(o.noticeTitle);
+							titleEl.style.width = '400px';
+							titleEl.appendChild(titleText);
+							noticeEl.appendChild(titleEl);
+							
+							const writerEl = document.createElement('div');
+							const writerText = document.createTextNode(o.noticeWriter);
+							writerEl.style.width = '150px';
+							writerEl.appendChild(writerText);
+							noticeEl.appendChild(writerEl);
+							
+							const dateEl = document.createElement('div');
+							const dateText = document.createTextNode(o.createDate);
+							dateEl.style.width = '200px';
+							dateEl.appendChild(dateText);
+							noticeEl.appendChild(dateEl);
+							
+							console.log(noticeEl);
+						*/
+						
+                		noticeEl.appendChild(createDiv(o.noticeNo, '50px'));
+                        noticeEl.appendChild(createDiv(o.noticeTitle, '400px'));
+                        noticeEl.appendChild(createDiv(o.noticeWriter, '150px'));
+                        noticeEl.appendChild(createDiv(o.createDate, '200px'));
+
+                        //console.log(noticeEl);
+
+                        outerDiv.appendChild(noticeEl);
+                    });
+
+                    document.getElementById('content').appendChild(outerDiv);
+                }
+            });
+        }
+
+        function createDiv(data, style) {
+        	
+            const divEl = document.createElement('div');
+            const divText = document.createTextNode(data);
+            divEl.style.width = style;
+            divEl.appendChild(divText);
+            
+            return divEl;
+        }
+		   
+		
+		
+		
+	</script>
 	
 
 </body>

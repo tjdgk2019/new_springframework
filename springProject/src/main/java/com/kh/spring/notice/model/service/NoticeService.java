@@ -13,6 +13,6 @@ public interface NoticeService {
 	
 	int update(Notice notice);
 	
-	int delete(int notice);
+	int delete(int noticeNo);
 	
 }
