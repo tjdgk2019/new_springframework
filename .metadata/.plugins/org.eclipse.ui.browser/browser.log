@@ -15,3 +15,9 @@
 6월 25, 2024 14:51:30.535 [5396:14408:0625/145130.535:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
 6월 25, 2024 14:59:55.492 Created TensorFlow Lite XNNPACK delegate for CPU.
 6월 25, 2024 15:24:45.281 Created TensorFlow Lite XNNPACK delegate for CPU.
+
+7월 03, 2024 11:15:24.620 NEW SESSION
+7월 03, 2024 11:15:24.620 Created TensorFlow Lite XNNPACK delegate for CPU.
+7월 03, 2024 11:15:34.460 Created TensorFlow Lite XNNPACK delegate for CPU.
+7월 03, 2024 17:38:25.179 Created TensorFlow Lite XNNPACK delegate for CPU.
+7월 03, 2024 17:52:35.952 [7428:2400:0703/175235.951:ERROR:sharing_service.cc(250)] Device un-registration failed with fatal error
